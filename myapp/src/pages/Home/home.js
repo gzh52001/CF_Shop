@@ -7,6 +7,9 @@ import {ShopTwoTone,AppstoreTwoTone,BulbTwoTone,ShoppingTwoTone} from '@ant-desi
 const { Search } = Input;
 
 class Home extends React.Component{
+    goto = (path)=>{
+        this.props.history.push(path);
+    }
     render(){
         const suffix = (
             <AudioOutlined
@@ -29,19 +32,19 @@ class Home extends React.Component{
             <ul>
             <li>
             <ShopTwoTone />
-            <span>全部周边</span>
+            <span onClick={this.goto.bind(this,'/sort')}>全部周边</span>
             </li>
             <li>
             <AppstoreTwoTone />
-            <span>新品尝鲜</span>
+            <span onClick={this.goto.bind(this,'/sort')}>新品尝鲜</span>
             </li>
             <li>
             <ShoppingTwoTone />
-            <span>人气爆款</span>
+            <span onClick={this.goto.bind(this,'/sort')}>人气爆款</span>
             </li>
             <li>
             <BulbTwoTone />
-            <span>生活用品</span>
+            <span onClick={this.goto.bind(this,'/sort')}>生活用品</span>
             </li>
             </ul>
 
