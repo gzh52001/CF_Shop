@@ -8,9 +8,13 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "antd": "^4.4.2",
+    "element-react": "^1.4.34",
+    "element-theme-default": "^1.4.13",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-app-rewired": "^2.1.6",
     "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.12.21",
     "react-scripts": "3.4.1"
   },
   "scripts": {

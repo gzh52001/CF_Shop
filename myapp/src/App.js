@@ -13,7 +13,7 @@ import Mine from './pages/Mine/mine';
 function App(props) {
   console.log('app.props=',props);
   
-  const menu = [{
+  const foot = [{
     text:'首页',
     path:'/home',
     icon:<HomeOutlined/>,
@@ -41,11 +41,11 @@ function App(props) {
     <div className="App">
 
       <nav>
-        <ul>
+        <ul className="foot_ul">
         
           {
-          menu.map(item=>(
-            <li  key={item.path}onClick={goto.bind(null,item.path)}>
+          foot.map(item=>(
+            <li className="foot_li"  key={item.path}onClick={goto.bind(null,item.path)}>
              {item.icon}
              {item.text}
              </li>
@@ -56,7 +56,7 @@ function App(props) {
       
       <Switch>
       {
-                        menu.map(item => <Route key={item.path} path={item.path} component={item.component} />)
+        foot.map(item => <Route key={item.path} path={item.path} component={item.component} />)
         } 
         <Route path="/home" component={Home}/>
         <Route path="/sort" component={Sort}/>

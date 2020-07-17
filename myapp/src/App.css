@@ -18,7 +18,7 @@ html {
   background: white;
 } */
 
-ul {
+.foot_ul {
   position: fixed;
   bottom: 0;
   /* left: 0; */
@@ -28,7 +28,7 @@ ul {
   /* background: pink; */
 }
 
-li {
+.foot_li {
   width: 25%;
   display: flex;
   justify-content: center;
