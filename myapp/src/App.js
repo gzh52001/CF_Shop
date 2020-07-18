@@ -2,7 +2,7 @@ import React from 'react';
 import {Route,Switch,Redirect,withRouter} from 'react-router-dom'
 import './App.css';
 import {HomeOutlined,UserOutlined,AppstoreOutlined,ShoppingCartOutlined} from '@ant-design/icons';
-
+import 'antd/dist/antd.css';
 import Home from './pages/Home/home';
 import Sort from './pages/Sort/sort';
 import Reg from './pages/Reg/reg';
@@ -11,7 +11,7 @@ import Cart from './pages/Cart/cart';
 import Mine from './pages/Mine/mine';
 
 function App(props) {
-  console.log('app.props=',props);
+  // console.log('app.props=',props);
   
   const foot = [{
     text:'首页',

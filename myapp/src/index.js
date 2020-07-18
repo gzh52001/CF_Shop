@@ -8,9 +8,9 @@ const Router = process.env.NODE_ENV ==='production' ? BrowserRouter : HashRouter
 
 ReactDOM.render(
   <Router>
-  <React.StrictMode>
+  {/* <React.StrictMode> */}
     <App />
-  </React.StrictMode>
+  {/* </React.StrictMode> */}
     </Router>
   ,
   document.getElementById('root')

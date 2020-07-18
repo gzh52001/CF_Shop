@@ -1,35 +1,26 @@
 import React from 'react';
 import './home.scss';
-import { Input  } from 'antd';
-import { AudioOutlined } from '@ant-design/icons';
+import { NoticeBar, WhiteSpace, Icon } from 'antd-mobile';
 import {ShopTwoTone,AppstoreTwoTone,BulbTwoTone,ShoppingTwoTone} from '@ant-design/icons';
+import 'antd/dist/antd.css';
+import Nav from './nav'
 
-const { Search } = Input;
 
 class Home extends React.Component{
     goto = (path)=>{
         this.props.history.push(path);
     }
     render(){
-        const suffix = (
-            <AudioOutlined
-              style={{
-                fontSize: 20,
-                color: '#1890ff',
-              }}
-            />
-          );
+
         // const {current} = this.state;
         return(
             <div>
-            <Search
-            size="large"
-            placeholder="请输入搜索 商品"
-            suffix={suffix}
-            onSearch={value => console.log(value)} 
-            />
+          <NoticeBar marqueeProps={{ loop: true, style: { padding: '0 7.5px' } }}>
+          因天气原因导致的积压订单，我们将会在物流恢复正常后按照订单顺序陆续发出
+          </NoticeBar>
+          <Nav />
             <img src="https://game.gtimg.cn/images/daojushop/zb/ad/202007/20200706165458_829376.jpg"/>
-            <ul>
+            <ul className="home_ul">
             <li>
             <ShopTwoTone />
             <span onClick={this.goto.bind(this,'/sort')}>全部周边</span>
