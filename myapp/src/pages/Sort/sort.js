@@ -1,7 +1,7 @@
 import React from 'react';
 // import { NavBar, Icon } from 'antd-mobile';
 
-import { AudioOutlined,DownOutlined ,MailOutlined,AppstoreOutlined,OrderedListOutlined} from '@ant-design/icons';
+import { AudioOutlined,HomeOutlined ,MailOutlined,AppstoreOutlined,OrderedListOutlined} from '@ant-design/icons';
 import { Input,Menu   } from 'antd';
 import 'antd/dist/antd.css';
 
@@ -42,7 +42,7 @@ class Sort extends React.Component{
         onClick={this.handleClick} 
         selectedKeys={[current]} 
         mode="horizontal">
-        <Menu.Item key="mail" icon={<MailOutlined />} >
+        <Menu.Item key="mail" icon={<HomeOutlined />} >
           默认
         </Menu.Item>
         <SubMenu  icon={<AppstoreOutlined />} title="分类">
@@ -62,7 +62,7 @@ class Sort extends React.Component{
             <Menu.Item key="setting:4">four</Menu.Item>
           {/* </Menu.ItemGroup> */}
         </SubMenu>
-        <SubMenu  icon={<DownOutlined />} title="全部">
+        <SubMenu  icon={<MailOutlined />} title="全部">
           {/* <Menu.ItemGroup title="Item 1" mode="inline"> */}
             <Menu.Item key="setting:1">one</Menu.Item>
             <Menu.Item key="setting:2">two</Menu.Item>
