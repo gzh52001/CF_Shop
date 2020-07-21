@@ -10,4 +10,14 @@ export default {
         });
         return req;
     },
+   cartlist(uid){
+       const req = request({
+           url:"http://10.3.141.126:2020" + '/good/orders',
+           params:{
+               uid:uid
+           },
+           method:'get',
+       });
+       return req;
+   }
 }

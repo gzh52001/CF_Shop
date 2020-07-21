@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import { Popover, NavBar, Icon } from 'antd-mobile';
-import { withRouter } from 'react-router-dom'
 import 'antd/dist/antd.css';
 const Item = Popover.Item;
 const myImg = src => <img src={`https://gw.alipayobjects.com/zos/rmsportal/${src}.svg`} className="am-icon am-icon-xs" alt="" />;

@@ -1,6 +1,4 @@
 import React from 'react';
-// import { NavBar, Icon } from 'antd-mobile';
-
 import { AudioOutlined,HomeOutlined ,MailOutlined,AppstoreOutlined,OrderedListOutlined} from '@ant-design/icons';
 import { Input,Menu   } from 'antd';
 import 'antd/dist/antd.css';
@@ -54,7 +52,7 @@ class Sort extends React.Component{
           {/* </Menu.ItemGroup> */}
         </SubMenu>
         
-        <SubMenu  icon={<OrderedListOutlined />} title="默认排序">
+        <SubMenu  icon={<OrderedListOutlined />} title="排序">
           {/* <Menu.ItemGroup title="Item 1" mode="inline"> */}
             <Menu.Item key="setting:1">one</Menu.Item>
             <Menu.Item key="setting:2">two</Menu.Item>

@@ -32,3 +32,26 @@ input{
     }
   }
 }
+.goodslist{
+  width: 100%;
+  img{
+    width: 100%;
+    // height: 200px;
+    background: none;
+  }
+  h3{
+    font-weight: bold;
+    padding-left:10px;
+    color:#58bc58;
+    text-align: center;
+  }
+
+}
+.price{
+  > span{
+      color:#f00;
+      &::before{
+          content:'￥'
+      }
+  }
+}

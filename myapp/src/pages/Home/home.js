@@ -10,31 +10,32 @@ import mock from '../../api/mock.js'
 
 class Home extends React.Component{
     state={
-        data:[]//商品列表数据
+        // categories:[]//商品列表数据
+        list:[]
     }
 
-    goto = (path)=>{
-        this.props.history.push(path);
+    goto = (iMallId)=>{
+        this.props.history.push('/goods/'+iMallId);
     }
 
     
    async componentDidMount(){
     const {data} = await mock.pointsList();
-    console.log(data)
-    // data.data.forEach(tiem => {
-        
-    // });
-    // const categories = data.slice(1).map(item=>item.id);
 
- 
-    this.setState({
-        data:[...data.data]
+        const aa =data[0].data[0].id
+        console.log(aa);
+        this.setState({
+        list:data
     })
+
+    // const tt = await mock.cartlist(3);
+    // console.log(tt);
+    
 }
 
     render(){        
-        const {data} = this.state; 
-        console.log(data)
+        const {list} = this.state; 
+        console.log(list)
         return(
             <div>
           <NoticeBar marqueeProps={{ loop: true, style: { padding: '0 7.5px' } }}>
@@ -60,32 +61,31 @@ class Home extends React.Component{
             <span onClick={this.goto.bind(this,'/sort')}>生活用品</span>
             </li>
             </ul>
+            <div className="goodslist">
+             {
+                 list.map((item,idx)=>{
+                  return <div key={idx}>
+                           <h3>{item.form_title}</h3>
+                           <Row gutter={16}>
+                           {
+                               item.data.map((goods,id)=>{
+                                   return <Col key={id} className="gutter-row" span={12} onClick={this.goto.bind(this,goods.iMallId)}>
+                                           <img src={goods.sProfileImg} ></img>
+                                           <h4>{goods.good_name}</h4>
+                                           <p className="price">
+                                           <del>{goods.iOriPrice}</del>
+                                           <span>{goods.iPromotePrice}</span>
+                                           </p>
+                                         </Col>
+                               })
+                           }
+                           </Row>
+                         </div>
+                 })
+             }
+            </div>
 
-
-{/* 
-             <div className="goodslist">
-                    {
-                    data.map((item,idx)=>(
-                    <div  key={idx}>
-                      <h3>{item.title}</h3>
-                    <Row gutter={16}>
-                     {
-                    data.map((goods)=>(
-                       <Col key={goods.id} className="gutter-row" span={6} onClick={this.goto.bind(this,goods.goods_id)}>
-                        <img src={goods.sProfileImg} />
-                        <h4>{goods.good_name}</h4>
-                        <p className="price">
-                        <del>{goods.iOriPrice}</del>
-                     <span>{goods.iPromotePrice}</span>
-                        </p>
-                        </Col>
-                        ))
-                        }         
-                     </Row>
-                    </div>
-                        ))
-                    }
-                </div> */}
+             
             </div>
 
         )

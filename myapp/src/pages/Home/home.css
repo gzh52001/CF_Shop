@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .home_img {
   width: 100%;
   height: 100%;
@@ -31,4 +32,28 @@ input {
 
 .home_ul li span {
   font-size: 20px;
+}
+
+.goodslist {
+  width: 100%;
+}
+
+.goodslist img {
+  width: 100%;
+  background: none;
+}
+
+.goodslist h3 {
+  font-weight: bold;
+  padding-left: 10px;
+  color: #58bc58;
+  text-align: center;
+}
+
+.price > span {
+  color: #f00;
+}
+
+.price > span::before {
+  content: '￥';
 }

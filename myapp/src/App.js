@@ -9,6 +9,7 @@ import Reg from './pages/Reg/reg';
 import Login from './pages/Login/login';
 import Cart from './pages/Cart/cart';
 import Mine from './pages/Mine/mine';
+import Details from './pages/Details/details';
 
 function App(props) {
   // console.log('app.props=',props);
@@ -64,6 +65,7 @@ function App(props) {
         <Route path="/login" component={Login}/>
         <Route path="/cart" component={Cart}/>
         <Route path="/mine" component={Mine}/>
+        <Route path="/details" component={Details}/>
         <Redirect from="/" to="/home" exact/>
       </Switch>
     </div>
