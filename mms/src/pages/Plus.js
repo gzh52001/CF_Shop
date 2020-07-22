@@ -1,9 +1,8 @@
-import React,{Component} from 'react';
+import React from 'react';
 
 
-class Plus extends Component{
+class Plus extends React.Component{
     render(){
-
         return (
             <div>
                 Plus

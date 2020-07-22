@@ -1,9 +1,9 @@
-import React,{Component} from 'react';
+import React from 'react';
 
 
-class Login extends Component{
+class Login extends React.Component{
     render(){
-
+        console.log('login.props=',this.props)
         return (
             <div>
                 Login

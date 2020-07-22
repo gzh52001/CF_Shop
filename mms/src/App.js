@@ -1,57 +1,72 @@
 import React from 'react';
+import { Route, Redirect, Switch, Link, NavLink, withRouter } from 'react-router-dom';
 import './App.css';
+import { withUser } from './utils/hoc';
 
-import { Layout, Menu, Breadcrumb, Typography } from 'antd';
-import { UserOutlined, LaptopOutlined, ShoppingOutlined, PropertySafetyOutlined } from '@ant-design/icons';
+import Home from './pages/Home';
+import Reg from './pages/Reg';
+import Login from './pages/Login';
+import Cart from './pages/Cart';
+import Order from './pages/Order';
+import Plus from './pages/Plus';
 
-const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
-const { Title } = Typography;
 
-function App() {
+function App(props) {
+  console.log('app.props=', props)
+  const menu = [{
+    text: '首页',
+    path: '/home'
+  },
+    //  {
+    //   text: '注册',
+    //   path: '/reg'
+    // }, {
+    //   text: '登录',
+    //   path: '/login'
+    // }, 
+    , {
+    text: '会员管理',
+    path: '/plus'
+  }, {
+    text: '商品管理',
+    path: '/cart'
+  }, {
+    text: '订单管理',
+    path: '/order'
+  }];
+
+  const goto = (path) => {
+    props.history.push(path);
+  }
   return (
     <div className="App">
-      <Layout>
-        <Header className="header">
-          <Title level={3} style={{ color: 'white', float: 'left', paddingTop: '14px' }}>CF周边后台管理系统</Title>
-          <div className="logo" />
-          <Menu theme="dark" mode="horizontal" style={{ float: 'right' }}>
-            <Menu.Item key="1">登录</Menu.Item>
-            <Menu.Item key="2">注册</Menu.Item>
-          </Menu>
-        </Header>
-        <Layout>
-          <Sider width={200} className="site-layout-background">
-            <Menu
-              defaultSelectedKeys={['1']}
-              defaultOpenKeys={['sub1']}
-              style={{ height: '100%', borderRight: 0 }}
-            >
-              <SubMenu key="sub1" icon={<UserOutlined />} title="首页">
-              </SubMenu>
-              <SubMenu key="sub2" icon={<PropertySafetyOutlined />} title="会员管理">
-              </SubMenu>
-              <SubMenu key="sub3" icon={<ShoppingOutlined />} title="商品管理">
-              </SubMenu>
-              <SubMenu key="sub4" icon={<LaptopOutlined />} title="订单管理">
-              </SubMenu>
-            </Menu>
-          </Sider>
-          <Layout style={{ padding: '10px' }}>
-            <Content
-              className="site-layout-background"
-              style={{
-                padding: 24,
-                margin: 0,
-                minHeight: 280,
-              }}
-            >
-            </Content>
-          </Layout>
-        </Layout>
-      </Layout>,
+      <nav className="nav">
+        <img src="https://js01.daoju.qq.com/zb/cf/images/logo-cf-up.png" />
+        <h2>CF周边商城后台管理系统</h2>
+      </nav>
+      <ul>
+        {
+          menu.map(item => (
+            <li className="list" key={item.path} onClick={goto.bind(null, item.path)}>
+              {item.text}
+            </li>
+          ))
+        }
+      </ul>
+      <Switch className="content">
+        <Route path='/home' component={Home} />
+        <Route path='/reg' component={Reg} />
+        <Route path='/login' component={Login} />
+        <Route path='/cart' component={Cart} />
+        <Route path='/plus' component={Plus} />
+        <Route path='/order' component={Order} />
+        <Route path='/notfound' component={() => <div>notfound</div>} />
+        <Redirect from='/' to='/home' exact />
+        <Redirect to="/notfound" />
+      </Switch>
     </div>
   );
 }
-
+App = withRouter(App); // 传入App组件，返回一个新的组件
+App = withUser(App)
 export default App;
