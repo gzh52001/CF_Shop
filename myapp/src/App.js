@@ -65,7 +65,7 @@ function App(props) {
         <Route path="/login" component={Login}/>
         <Route path="/cart" component={Cart}/>
         <Route path="/mine" component={Mine}/>
-        <Route path="/details" component={Details}/>
+        <Route path="/details/:iMallid" component={Details}/>
         <Redirect from="/" to="/home" exact/>
       </Switch>
     </div>

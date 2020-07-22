@@ -57,3 +57,7 @@ input {
 .price > span::before {
   content: '￥';
 }
+
+.all-sp {
+  text-align: center;
+}

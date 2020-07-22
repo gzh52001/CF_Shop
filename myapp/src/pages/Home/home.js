@@ -14,22 +14,25 @@ class Home extends React.Component{
         list:[]
     }
 
-    goto = (iMallId)=>{
-        this.props.history.push('/goods/'+iMallId);
+    goto = (path)=>{
+        this.props.history.push(path);
+    }
+    gothis = (iMallId)=>{
+        this.props.history.push('/details/'+iMallId);
+        
     }
 
     
    async componentDidMount(){
     const {data} = await mock.pointsList();
 
-        const aa =data[0].data[0].id
-        console.log(aa);
+        // const aa =data[0].data[0].id
+        // console.log(aa);
         this.setState({
         list:data
     })
 
-    // const tt = await mock.cartlist(3);
-    // console.log(tt);
+
     
 }
 
@@ -69,7 +72,7 @@ class Home extends React.Component{
                            <Row gutter={16}>
                            {
                                item.data.map((goods,id)=>{
-                                   return <Col key={id} className="gutter-row" span={12} onClick={this.goto.bind(this,goods.iMallId)}>
+                                   return <Col key={id} className="gutter-row" span={12} onClick={this.gothis.bind(this,goods.iMallId)}>
                                            <img src={goods.sProfileImg} ></img>
                                            <h4>{goods.good_name}</h4>
                                            <p className="price">
@@ -84,7 +87,9 @@ class Home extends React.Component{
                  })
              }
             </div>
-
+             <p className='all-sp' onClick={this.goto.bind(this,'/sort')}>
+             查看所有商品
+             </p>
              
             </div>
 
