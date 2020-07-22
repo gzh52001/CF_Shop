@@ -7,36 +7,44 @@ html{
   height: 100%;
   background-color: white;
 }
-.nav{
-  height: 60px;
-  line-height: 60px;
-  background-color: #3a3a3a;
-  margin-bottom: 1px;
-  img{
-    width: 200px;
+.App{
+  .nav{
     height: 60px;
+    line-height: 60px;
+    background-color: #3a3a3a;
+    border-bottom: 1px solid white;
+    img{
+      width: 200px;
+      height: 60px;
+      float: left;
+    }
+    h2{
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      float: left;
+      color: white;
+    }
+    Button{
+      width: 60px;
+      height: 30px;
+      border: none;
+      margin: 15px;
+      float: right;
+    }
+  }
+  .navMenu{
+    width: 15%;
     float: left;
+    ul{
+      height: 659px;
+      background-color: #3a3a3a;
+      .list{
+        height: 60px;
+        line-height: 60px;
+        list-style: none;
+        text-align: center;
+        color: white;
+        border-bottom: 1px solid gray;
+      }
+    }
   }
-  h2{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    width: 36%;
-    float: left;
-    color: white;
-  }
-}
-ul{
-  width: 20%;
-  background-color: #3a3a3a;
-  float: left;
-  .list{
-    height: 40px;
-    line-height: 40px;
-    list-style: none;
-    text-align: center;
-    color: white;
-  }
-}
-.content{
-  width: 70%;
-  float: right;
 }

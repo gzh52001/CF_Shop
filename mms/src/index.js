@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter, BrowserRouter, Route } from 'react-router-dom'
+import { HashRouter, BrowserRouter, Switch } from 'react-router-dom'
 import App from './App';
 
 // process.env.NODE_ENV // development,production
@@ -11,6 +11,7 @@ ReactDOM.render(
     <React.StrictMode>
     </React.StrictMode>
     <App>
+      <Switch></Switch>
     </App>
   </Router>
   ,

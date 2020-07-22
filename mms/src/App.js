@@ -3,12 +3,12 @@ import { Route, Redirect, Switch, Link, NavLink, withRouter } from 'react-router
 import './App.css';
 import { withUser } from './utils/hoc';
 
-import Home from './pages/Home';
-import Reg from './pages/Reg';
+import Home from './pages/Home/Home';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
 import Order from './pages/Order';
-import Plus from './pages/Plus';
+import Plus from './pages/Plus/Plus';
+import { Button } from 'antd';
 
 
 function App(props) {
@@ -16,15 +16,7 @@ function App(props) {
   const menu = [{
     text: '首页',
     path: '/home'
-  },
-    //  {
-    //   text: '注册',
-    //   path: '/reg'
-    // }, {
-    //   text: '登录',
-    //   path: '/login'
-    // }, 
-    , {
+  }, {
     text: '会员管理',
     path: '/plus'
   }, {
@@ -43,19 +35,21 @@ function App(props) {
       <nav className="nav">
         <img src="https://js01.daoju.qq.com/zb/cf/images/logo-cf-up.png" />
         <h2>CF周边商城后台管理系统</h2>
+        <Button>退出</Button>
       </nav>
-      <ul>
-        {
-          menu.map(item => (
-            <li className="list" key={item.path} onClick={goto.bind(null, item.path)}>
-              {item.text}
-            </li>
-          ))
-        }
-      </ul>
-      <Switch className="content">
+      <div className="navMenu">
+        <ul>
+          {
+            menu.map(item => (
+              <li className="list" key={item.path} onClick={goto.bind(null, item.path)}>
+                {item.text}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <Switch>
         <Route path='/home' component={Home} />
-        <Route path='/reg' component={Reg} />
         <Route path='/login' component={Login} />
         <Route path='/cart' component={Cart} />
         <Route path='/plus' component={Plus} />

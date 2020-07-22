@@ -1,10 +1,12 @@
 import React from 'react';
 
+import './plus.scss';
+
 
 class Plus extends React.Component{
     render(){
         return (
-            <div>
+            <div className="Plus">
                 Plus
             </div>
         )

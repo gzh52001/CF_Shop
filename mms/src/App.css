@@ -9,41 +9,48 @@ html {
   background-color: white;
 }
 
-.nav {
+.App .nav {
   height: 60px;
   line-height: 60px;
   background-color: #3a3a3a;
-  margin-bottom: 1px;
+  border-bottom: 1px solid white;
 }
 
-.nav img {
+.App .nav img {
   width: 200px;
   height: 60px;
   float: left;
 }
 
-.nav h2 {
+.App .nav h2 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  width: 36%;
   float: left;
   color: white;
 }
 
-ul {
-  width: 20%;
-  background-color: #3a3a3a;
+.App .nav Button {
+  width: 60px;
+  height: 30px;
+  border: none;
+  margin: 15px;
+  float: right;
+}
+
+.App .navMenu {
+  width: 15%;
   float: left;
 }
 
-ul .list {
-  height: 40px;
-  line-height: 40px;
+.App .navMenu ul {
+  height: 659px;
+  background-color: #3a3a3a;
+}
+
+.App .navMenu ul .list {
+  height: 60px;
+  line-height: 60px;
   list-style: none;
   text-align: center;
   color: white;
-}
-
-.content {
-  width: 70%;
-  float: right;
+  border-bottom: 1px solid gray;
 }
