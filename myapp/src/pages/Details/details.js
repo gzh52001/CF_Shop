@@ -42,8 +42,7 @@ class Details extends Component{
     }
     render(){
         console.log(this.props.match.params.iMallid);
-        let {good_name}=list
-        console.log(good_name)
+
         
         const {list} = this.state; 
         console.log(list)

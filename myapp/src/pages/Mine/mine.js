@@ -25,7 +25,7 @@ class Mine extends React.Component{
     render(){
         return(
             <div>
-            <Avatar className="tx" src="https://shp.qlogo.cn/daoju/9999/9999_1/0" size={64}  />
+            <Avatar className="tx" src="https://shp.qlogo.cn/daoju/9999/9999_1/0" size={64} onClick={this.goto.bind(this,'/login')}  />
             <span className="bt">游客</span>
             <RightOutlined className="jt" />
             <p>我的订单<span className="yjt">全部订单></span></p>

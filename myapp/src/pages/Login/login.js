@@ -1,7 +1,8 @@
+/* eslint-disable */
 import React from 'react';
 import '../Login/login.scss';
 import mock from '../../api/mock'
-import http from '../../utils/http'
+// import http from '../../utils/http'
 import { Alert } from 'antd';
 
 
