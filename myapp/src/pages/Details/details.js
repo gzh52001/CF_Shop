@@ -15,7 +15,17 @@ class Details extends Component{
         const {history} = this.props;
 
         history.push('/cart');
+        
+  
+        // this.dd(user_id,good_name,iMallId,iMallQty,iOriPrice)
     }
+    
+    // async dd(user_id,good_name,iMallId,iMallQty,iOriPrice){
+    //     const tt = await mock.clickadd(user_id,good_name,iMallId,iMallQty,iOriPrice);
+    //     console.log(tt);
+    // }
+
+
     async componentDidMount(){
         //获取商品id
         // const {match} = this.props;
@@ -24,12 +34,16 @@ class Details extends Component{
         const {data} = await mock.detailslist(this.props.match.params.iMallid);
         console.log(data);
 
+ 
+        
         this.setState({
             list:data
         })
     }
     render(){
         console.log(this.props.match.params.iMallid);
+        let {good_name}=list
+        console.log(good_name)
         
         const {list} = this.state; 
         console.log(list)

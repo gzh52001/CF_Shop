@@ -19,7 +19,7 @@ class Cart extends React.Component{
     // }
     
     // removeCart = ()=>{
-    //     this.props.history.remove(good.iMallId)
+    //     this.props.history.remove(iMallId)
     // }
     
     goto = (path)=>{
