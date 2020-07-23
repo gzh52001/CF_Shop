@@ -1,0 +1,83 @@
+.login {
+  width: 100%;
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #FFF;
+  position: relative;
+  border-radius: 6px;
+}
+
+.login .h1 {
+  font-size: 18px;
+  color: #353030;
+  font-weight: 600;
+  margin: 0 0 40px;
+}
+
+.login .from {
+  margin-top: 20px;
+}
+
+.login .from .from-list {
+  margin-top: 24px;
+}
+
+.login .from .from-list .user {
+  width: 100%;
+  margin: 0;
+  padding: 0 0 0 6px;
+  height: 40px;
+  border: 1px solid #E9E9E9;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.login .from .from-list .pass {
+  width: 100%;
+  margin: 0;
+  padding: 0 0 0 6px;
+  height: 40px;
+  border: 1px solid #E9E9E9;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.login .from .tos .span {
+  font-size: 12px;
+  user-select: none;
+  vertical-align: middle;
+  cursor: default;
+}
+
+.login .from .tos .p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.login .from .tos .p .a {
+  color: #FE4066;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.login .from .submit-btn {
+  margin-top: 16px;
+}
+
+.login .from .submit-btn .login-1 {
+  background-color: #389bec;
+  color: #FFF;
+  font-size: 16px;
+  height: 44px;
+  width: 100%;
+  display: block;
+  border-radius: 22px;
+}

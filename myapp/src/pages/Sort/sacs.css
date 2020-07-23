@@ -1,0 +1,4 @@
+.ant-menu-item, .ant-menu-submenu-title .www {
+  display: flex;
+  flex-direction: column;
+}
