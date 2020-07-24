@@ -21,6 +21,18 @@ export default {
         });
         return req;
     },
+
+    private(uid) {
+        const req = request({
+            url: "http://10.3.141.126:2020" + '/good/private/'+uid,
+            method: 'get',
+        });
+        return req;
+    },
+
+  
+
+
     detailslist(cid) {
         const req = request({
             url: "http://10.3.141.126:2020" + '/good/Details/'+cid,
@@ -82,5 +94,42 @@ export default {
             psw: password,
         });
         return req;
-    }
+    },
+
+
+
+
+    pushadd(user_id,good_name,iMallId,iMallQty,iOriPrice,sProfileImg) {
+        const req = request.post("http://10.3.141.126:2020" + '/good/addlist', 
+        {
+            user_id:user_id,
+            iMallQty:iMallQty,
+            good_name:good_name,
+            iMallId:iMallId,
+            sProfileImg:sProfileImg,
+            iOriPrice:iOriPrice,
+        });
+        return req;
+    },
+    // remo(uid,iMallId) {
+    //     console.log(uid,iMallId)
+    //     const req = request.delete("http://10.3.141.126:2020" + '/good/dele', 
+    //     {
+    //         uid:uid,
+    //         iMallId:iMallId,
+    //     });
+    //     return req;
+    // }
+    remo(uid,iMallId) {
+        console.log(uid,iMallId)
+        const req = request({
+            url: "http://10.3.141.126:2020" + '/good/dele',
+            data: {
+            uid:uid,
+            iMallId:iMallId,
+            },
+            method: 'delete',
+        });
+        return req;
+    },
 }

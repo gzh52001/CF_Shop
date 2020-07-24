@@ -8,7 +8,8 @@ import mock from '../../api/mock.js'
 import './cart.scss';
 class Cart extends React.Component{
     state= {
-        list:[]
+        list:[],
+        shadiao:false,
     }
     // removeCart(goods_id){
     //     dispatch({
@@ -28,6 +29,19 @@ class Cart extends React.Component{
     changeQty = ()=>{
 
     }
+    removegood = (iMallId)=>{
+        const {history} = this.props;
+        // history.push('/cart');
+        // console.log("sss",iMallId)
+        this.removeadd(iMallId)
+
+    }
+
+    async removeadd(iMallId){
+        console.log("3",iMallId)
+        const aa = await mock.remo(3,iMallId);
+    }
+
     async componentDidMount(){
         // 获取商品id
     const {data} = await mock.cartslist(3);
@@ -35,9 +49,11 @@ class Cart extends React.Component{
     this.setState({
         list:data
     })
+    // setTimeout(this.changeHeight, 0);
+
     }
     render(){
-        const {cartlist,removeCart,clearCart,changeQty,totalPrice,remove,change,clear} = this.props;
+        // const {cartlist,removeCart,clearCart,changeQty,totalPrice,remove,change,clear} = this.props;
         const {list} = this.state; 
         console.log(list)
         return(
@@ -48,7 +64,7 @@ class Cart extends React.Component{
                         return <div key={idx}>
                         <List.Item extra={
                          <Tooltip title="删除">
-                             <Button type="danger" shape="circle" ghost size="small" icon={<CloseOutlined />} ></Button>
+                             <Button type="danger" shape="circle" ghost size="small" icon={<CloseOutlined />} onClick={this.removegood.bind(this,item.iMallId)}></Button>
                          </Tooltip>
                          }>
                         <List.Item.Meta
@@ -56,6 +72,7 @@ class Cart extends React.Component{
                         title={<>{item.good_name}</>}
                         description={
                         <div className="price">
+                                
                                  <span>{item.iPromotePrice}</span> &times; 
                                  <InputNumber size="small" style={{width:60,marginLeft:8}} min={1} max={10} value={item.iMallQty} onChange={this.changeQty} />
                              </div>

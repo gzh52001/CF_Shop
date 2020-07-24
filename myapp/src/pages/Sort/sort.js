@@ -1,10 +1,11 @@
+/* eslint-disable */
 import React from 'react';
 import { AudioOutlined,HomeOutlined ,MailOutlined,AppstoreOutlined,OrderedListOutlined} from '@ant-design/icons';
 import { Input,Menu   } from 'antd';
 import 'antd/dist/antd.css';
 import {Row,Col} from 'antd';
 import mock from '../../api/mock.js'
-
+import './sort.scss';
 const { Search } = Input;
 const { SubMenu } = Menu;
 
@@ -13,34 +14,51 @@ const { SubMenu } = Menu;
 class Sort extends React.Component{
     state = {
         list:[],
+        tolist:[],
         current: 'mail',
+        display:false,
       };
       gothis = (iMallId)=>{
         this.props.history.push('/details/'+iMallId);
     }
-  //   goto = (path)=>{
-  //     this.props.history.push(path);
-  // }
       handleClick = e => {
-        console.log('click ', e);
+        console.log('click ', e.key);
         this.setState({ current: e.key });
+        this.private(e.key)
       };
+      async private(e){      
+        if(e=="mail"){
+          e=1;
+          this.setState({
+            display:false
+         })
+        }else{
+         e;
+         this.setState({
+          display:true
+       })
+       }
+        const ccc = await mock.private(e);  
+        this.setState({
+           tolist:ccc.data
+        })
+      }
+
 
       async componentDidMount(){
-        const {data} = await mock.pointsList();
-    
-            // const aa =data[0].data[0].id
-            // console.log(aa);
-            this.setState({
-            list:data
-        })
-    
-    
-        
+        const ccc = await mock.private(3);  
+        const {data} = await mock.pointsList();    
+        this.setState({
+          list:data,
+          tolist:ccc.data,
+        })     
+      
     }
     render(){
       const {list} = this.state; 
-        console.log(list)
+      const {tolist} =this.state;
+      const display = {display:this.state.display?"block" :"none"};
+      const display2 = {display:this.state.display?"none" :"block"}
         const { current } = this.state;
         const suffix = (
             <AudioOutlined
@@ -95,7 +113,7 @@ class Sort extends React.Component{
         </SubMenu>
  
       </Menu>
-      <div className="goodslist">
+      <div className="goodsone" style={display2}>
              {
                  list.map((item,idx)=>{
                   return <div key={idx}>
@@ -116,13 +134,26 @@ class Sort extends React.Component{
                          </div>
                  })
              }
-            </div>
-         </div>
+       </div>
+       <div className="goodstwo" style={display} >
+       <Row gutter={16}>
+           {
+              tolist.map((goods,id)=>{
+              return <Col key={id} className="gutter-row" span={12} onClick={this.gothis.bind(this,goods.iMallId)}>
+                <img src={goods.sProfileImg} ></img>
+                <h4>{goods.good_name}</h4>
+                <p className="price">
+                <del>{goods.iOriPrice}</del>
+                <span>{goods.iPromotePrice}</span>
+                </p>
+              </Col>
+              })
+           }
+           </Row>
+       </div>
+       </div>
              );
            }
          }
         
-
-    
-
 export default Sort;

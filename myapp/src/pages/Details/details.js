@@ -15,15 +15,27 @@ class Details extends Component{
         const {history} = this.props;
 
         history.push('/cart');
-        
-  
-        // this.dd(user_id,good_name,iMallId,iMallQty,iOriPrice)
     }
-    
-    // async dd(user_id,good_name,iMallId,iMallQty,iOriPrice){
-    //     const tt = await mock.clickadd(user_id,good_name,iMallId,iMallQty,iOriPrice);
-    //     console.log(tt);
+    addgoods = ()=>{
+        const {history} = this.props;
+        // history.push('/cart');
+
+        console.log(this.state.list[0])
+        this.pushadd(this.state.list[0])
+    }
+
+    // gothis = (iMallId)=>{
+    //     this.props.history.push('/cart/'+iMallId);
     // }
+    
+    async pushadd(aa){
+        console.log('aa',aa.user_id,aa.good_name,aa.iMallId,aa.iMallQty,aa.iOriPrice,aa.sProfileImg)
+        const tt = await mock.pushadd(3,aa.good_name,aa.iMallId,aa.iMallQty,aa.iOriPrice,aa.sProfileImg);
+        console.log(tt);
+    }
+
+
+
 
 
     async componentDidMount(){
@@ -33,7 +45,6 @@ class Details extends Component{
         
         const {data} = await mock.detailslist(this.props.match.params.iMallid);
         console.log(data);
-
  
         
         this.setState({
@@ -42,7 +53,7 @@ class Details extends Component{
     }
     render(){
         console.log(this.props.match.params.iMallid);
-
+        
         
         const {list} = this.state; 
         console.log(list)
@@ -82,8 +93,8 @@ class Details extends Component{
                  
              }
              <Button.Group>
-                    <Button type="primary" size="large" icon={<ShoppingCartOutlined />}>添加到购物车</Button>
-                    <Button type="danger" size="large" icon={<ShoppingOutlined />} onClick={this.buyNow}>立即购买</Button>
+            <Button type="primary" size="large" icon={<ShoppingCartOutlined /> }onClick={this.addgoods}>添加到购物车</Button>
+            <Button type="danger" size="large" icon={<ShoppingOutlined />} onClick={this.buyNow} >立即购买</Button>
                 </Button.Group>
             </div>
             </div>
@@ -91,3 +102,6 @@ class Details extends Component{
             }
         }
 export default Details;
+
+// onClick={this.gothis.bind(this,item.iMallId)}
+// onClick={this.buyNow}
