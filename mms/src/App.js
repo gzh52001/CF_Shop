@@ -52,7 +52,7 @@ function App(props) {
         <Route path='/plus' component={Plus} />
         <Route path='/order' component={Order} />
         <Route path='/notfound' component={() => <div>notfound</div>} />
-        <Redirect from='/' to='/home' exact />
+        <Redirect from='/' to='/login' exact />
         <Redirect to="/notfound" />
       </Switch>
     </div>

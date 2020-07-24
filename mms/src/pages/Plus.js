@@ -2,6 +2,7 @@ import React from 'react';
 import { Table, Button } from 'antd';
 
 import 'antd/dist/antd.css';
+import mock from '../api/mock';
 
 const columns = [
     {
@@ -57,6 +58,7 @@ class Plus extends React.Component {
     state = {
         selectedRowKeys: [], 
         loading: false,
+        list:[]
     };
 
     start = () => {
@@ -74,6 +76,14 @@ class Plus extends React.Component {
         this.setState({ selectedRowKeys });
     };
 
+    async componentDidMount(){
+        const vip = await mock.plusList();
+        console.log(vip)
+        this.setState({
+            list:data
+        })
+    }
+
     render() {
         const { loading, selectedRowKeys } = this.state;
         const rowSelection = {
@@ -81,6 +91,8 @@ class Plus extends React.Component {
             onChange: this.onSelectChange,
         };
         const hasSelected = selectedRowKeys.length > 0;
+
+
         return (
             <div className="Plus">
                 <div style={{ marginBottom: 16 }}>
