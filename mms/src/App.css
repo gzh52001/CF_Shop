@@ -13,7 +13,6 @@ html {
   height: 60px;
   line-height: 60px;
   background-color: #3a3a3a;
-  border-bottom: 1px solid white;
 }
 
 .App .nav img {
@@ -31,16 +30,22 @@ html {
 }
 
 .App .nav ul {
-  background-color: #3a3a3a;
+  font-size: 16px;
   margin: 0;
 }
 
 .App .nav ul .list {
+  width: 120px;
   height: 60px;
   line-height: 60px;
   list-style: none;
   text-align: center;
   float: left;
   color: white;
-  margin: 0 10px;
+  cursor: pointer;
+}
+
+.App .nav ul :hover {
+  background-color: #6b6c6e;
+  color: black;
 }

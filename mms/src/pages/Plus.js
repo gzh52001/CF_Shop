@@ -5,44 +5,32 @@ import 'antd/dist/antd.css';
 
 const columns = [
     {
-        title: '订单号',
-        dataIndex: 'orderNumber',
+        title: '编号',
+        dataIndex: 'number',
     },
     {
-        title: '商品名称',
-        dataIndex: 'goodsName',
+        title: '会员编号',
+        dataIndex: 'pulsNumber',
     },
     {
-        title: '订单金额',
-        dataIndex: 'orderPrice',
+        title: '姓名',
+        dataIndex: 'name',
     },
     {
-        title: '订单状态',
-        dataIndex: 'orderStatus',
+        title: '年龄',
+        dataIndex: 'age',
     },
     {
-        title: '发货状态',
-        dataIndex: 'shipmentStatus',
+        title: '性别',
+        dataIndex: 'address',
     },
     {
-        title: '支付状态',
-        dataIndex: 'paymentStatus',
-    },
-    {
-        title: '用户名',
-        dataIndex: 'userName',
+        title: '加入时间',
+        dataIndex: 'join',
     },
     {
         title: '是否会员',
         dataIndex: 'level',
-    },
-    {
-        title: '联系电话',
-        dataIndex: 'phone',
-    },
-    {
-        title: '下单时间',
-        dataIndex: 'time',
     },
     {
         title: '操作',
@@ -55,22 +43,19 @@ const data = [];
 for (let i = 0; i < 46; i++) {
     data.push({
         key: i,
-        orderNumber: `100010001`,
-        goodsName: `CF专属T恤 ${i + 1}`,
-        orderPrice: `219.00`,
-        orderStatus:`已确认`,
-        shipmentStatus: `已发货`,
-        paymentStatus: `已付款`,
-        userName: `小芳 ${i + 1}`,
+        number: `${i + 1}`,
+        pulsNumber: `10001`,
+        name: `小芳 ${i + 1}`,
+        age: 32,
+        address: `男`,
+        join: `2020-7-24`,
         level: `是`,
-        phone: `10020003000`,
-        time: `2020-7-24`,
         operation: <button>删除</button>
     });
 }
-class Order extends React.Component {
+class Plus extends React.Component {
     state = {
-        selectedRowKeys: [],
+        selectedRowKeys: [], 
         loading: false,
     };
 
@@ -112,4 +97,4 @@ class Order extends React.Component {
     }
 }
 
-export default Order;
+export default Plus;

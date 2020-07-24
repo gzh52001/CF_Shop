@@ -7,7 +7,7 @@ import Home from './pages/Home/Home';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
 import Order from './pages/Order';
-import Plus from './pages/Plus/Plus';
+import Plus from './pages/Plus';
 import { Button } from 'antd';
 
 
