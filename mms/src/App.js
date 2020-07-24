@@ -34,10 +34,6 @@ function App(props) {
     <div className="App">
       <nav className="nav">
         <img src="https://js01.daoju.qq.com/zb/cf/images/logo-cf-up.png" />
-        <h2>CF周边商城后台管理系统</h2>
-        <Button>退出</Button>
-      </nav>
-      <div className="navMenu">
         <ul>
           {
             menu.map(item => (
@@ -47,7 +43,8 @@ function App(props) {
             ))
           }
         </ul>
-      </div>
+        <Button>退出</Button>
+      </nav>
       <Switch>
         <Route path='/home' component={Home} />
         <Route path='/login' component={Login} />
