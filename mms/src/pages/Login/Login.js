@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Form, Input, Button, Checkbox, Alert, message } from 'antd';
 import 'antd/dist/antd.css'
-import mock from '../api/mock'
+import mock from '../../api/mock'
+import './login.scss'
 
 const layout = {
   labelCol: { span: 8 },

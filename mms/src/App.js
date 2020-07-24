@@ -4,7 +4,7 @@ import './App.css';
 import { withUser } from './utils/hoc';
 
 import Home from './pages/Home/Home';
-import Login from './pages/Login';
+import Login from './pages/Login/Login';
 import Cart from './pages/Cart';
 import Order from './pages/Order';
 import Plus from './pages/Plus';
@@ -43,7 +43,7 @@ function App(props) {
             ))
           }
         </ul>
-        <Button>退出</Button>
+        <Button href="http://localhost:3000/#/Login" className="btn">退出</Button>
       </nav>
       <Switch>
         <Route path='/home' component={Home} />

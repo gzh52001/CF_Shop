@@ -21,7 +21,7 @@ html {
   float: left;
 }
 
-.App .nav Button {
+.App .nav .btn {
   width: 60px;
   height: 30px;
   border: none;
