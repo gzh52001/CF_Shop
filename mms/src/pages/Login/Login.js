@@ -97,7 +97,7 @@ class Login extends Component {
         </Form.Item>
 
         <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-          <Checkbox>Remember me</Checkbox>
+          <Checkbox>阅读并接受《用户协议》及《隐私权保护声明》</Checkbox>
         </Form.Item>
 
         <Form.Item {...tailLayout}>

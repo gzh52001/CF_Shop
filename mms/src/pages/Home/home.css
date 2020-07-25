@@ -4,7 +4,8 @@
 }
 
 .Home h1 {
-  background-image: url(https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1032823889,3476239057&fm=26&gp=0.jpg);
+  background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595653449348&di=3dc8015259c6f14dd2b8917a3d7866a9&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fpic%2Fitem%2F4ec2d5628535e5dddaa4db7076c6a7efcf1b6290.jpg);
+  background-size: 100% 100%;
   width: 100%;
   float: right;
   font-size: 50px;
@@ -12,5 +13,5 @@
   line-height: 659px;
   text-align: center;
   color: #000000;
-  text-shadow: 0 0 0.3em #fff, 0 0 0.3em #fff, 0 0 0.3em #fff;
+  text-shadow: 0 0 0.1em #fff, 0 0 1em #fff, 0 0 1em #fff;
 }

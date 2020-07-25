@@ -1,9 +1,17 @@
+body{
+    background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595653449348&di=3dc8015259c6f14dd2b8917a3d7866a9&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fpic%2Fitem%2F4ec2d5628535e5dddaa4db7076c6a7efcf1b6290.jpg);
+    background-size: 100% 100%;
+}
 .ant-form{
-    padding:7% 0% 00% 35%;
-    // margin: 20%; 
+    margin: 0 auto;
+    width: 600px;
+    height: 300px;
+    padding:3% 0% 0% 7%;
+    background: rgba(255,255,255,0.2);
+    border-radius: 20px;
 }
 .ant-form-item{
-    width: 40%; 
+    width: 60%;
 }
 
 .ant-input-affix-wrapper{
